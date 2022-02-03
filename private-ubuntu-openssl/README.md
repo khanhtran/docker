@@ -3,7 +3,7 @@ docker build -t kxtdev/private-ubuntu-openssl:v1 .
 docker run --rm -it kxtdev/private-ubuntu-openssl:v1 bash
 
 ONE-TIME-KEY-GENERATION:
-    openssl enc -aes-256-cbc -pbkdf2 -k secret -P
+    openssl enc -aes-128-cbc -pbkdf2 -k secret -P (256 key length doesn't work with s3)
 
 Encrypt(base64 out):
     openssl enc -aes-256-cbc -a -pbkdf2 -in file.txt -out file.base64.aes
