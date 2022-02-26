@@ -1,10 +1,10 @@
 docker build -t kxtdev/decoder:v1 . 
 
-docker run --rm \
+#ask for password
+docker run -it --rm \
 -v $PWD:/working \
--e PASSWORD=<password> \
--e IN=/working/file.base64.aes \
--e kxtdev/decoder:v1
+-e IN=/working/file.enc \
+kxtdev/decoder:v1
 
 notes:
     -d: decrypt

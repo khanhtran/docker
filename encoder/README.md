@@ -1,8 +1,8 @@
 docker build -t kxtdev/encoder:v1 . 
 
+#ask for password
 docker run --rm \
 -v $PWD:/working \
--e PASSWORD=$PASSWORD \
 -e IN=/working/file.txt \
 -e OUT=/working/file.enc \
 kxtdev/encoder:v1
